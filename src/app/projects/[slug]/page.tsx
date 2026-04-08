@@ -6,8 +6,13 @@ export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
-  const project = projects.find((p) => p.slug === params.slug);
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const project = projects.find((p) => p.slug === slug);
   if (!project) return { title: "Project Not Found" };
   return {
     title: `${project.title} — Amit Ghimire`,
@@ -15,8 +20,13 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   };
 }
 
-export default function ProjectPage({ params }: { params: { slug: string } }) {
-  const project = projects.find((p) => p.slug === params.slug);
+export default async function ProjectPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const project = projects.find((p) => p.slug === slug);
   if (!project) notFound();
 
   return (
@@ -123,7 +133,10 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           </h2>
           <ul className="flex flex-col gap-3">
             {project.features.map((feature, i) => (
-              <li key={i} className="flex items-start gap-3 text-base text-muted">
+              <li
+                key={i}
+                className="flex items-start gap-3 text-base text-muted"
+              >
                 <span className="mt-2.5 block h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                 <span className="leading-relaxed">{feature}</span>
               </li>
