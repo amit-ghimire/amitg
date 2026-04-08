@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --no-turbopack --use-npm)",
+      "Read(//d/development/websites/amitg/**)",
+      "Bash(npx create-next-app@latest portfolio-temp --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --no-turbopack --use-npm)",
+      "Bash(cp -r portfolio-temp/* portfolio-temp/.* d:/development/websites/amitg/amitg/)",
+      "Bash(rm -rf portfolio-temp)",
+      "Bash(npm run:*)"
+    ]
+  }
+}
