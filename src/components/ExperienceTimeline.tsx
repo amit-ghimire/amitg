@@ -1,11 +1,11 @@
 const experiences = [
   {
     period: "Sep 2024 — Present",
-    title: "Senior Unity Developer",
+    title: "Senior Software Engineer",
     company: "Blackbox Technologies",
     points: [
-      "Developing and optimizing 3D eCommerce experiences using Unity (WebGL), focusing on immersive product browsing and interactive user interfaces",
-      "Integrating Firestore backend for real-time product data synchronization between databases and 3D storefronts",
+      "Developing and optimizing 3D eCommerce experiences using Unity (WebGL) and threejs focusing on immersive product browsing and interactive user interfaces",
+      "Integrating Firebase and Flask API for real-time product data synchronization between stores ecommerce databases and 3D storefronts",
       "Building Python automation scripts to process and transform product data from multiple eCommerce APIs",
       "Troubleshooting WebGL rendering performance, asset loading, and memory usage for mobile browsers",
     ],
