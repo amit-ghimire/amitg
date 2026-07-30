@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { projects } from "@/data/projects";
+import { getProjectVideo } from "@/lib/video";
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
@@ -28,6 +29,8 @@ export default async function ProjectPage({
   const { slug } = await params;
   const project = projects.find((p) => p.slug === slug);
   if (!project) notFound();
+
+  const video = getProjectVideo(project);
 
   return (
     <article className="px-6 pt-32 pb-24">
@@ -69,27 +72,54 @@ export default async function ProjectPage({
           </p>
         </div>
 
-        {/* Placeholder hero image */}
-        <div
-          className={`mb-16 flex h-64 items-center justify-center rounded-2xl bg-gradient-to-br ${project.gradient} border border-border md:h-80`}
-        >
-          <div className="flex flex-col items-center gap-2 text-muted/30">
-            <svg
-              className="h-16 w-16"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={0.5}
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z"
-              />
-            </svg>
-            <span className="text-sm">Project Image Placeholder</span>
+        {/* Hero: video thumbnail or placeholder */}
+        {video ? (
+          <a
+            href={video.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative mb-16 block h-64 overflow-hidden rounded-2xl border border-border md:h-80"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={video.thumbnail}
+              alt={`${project.title} video thumbnail`}
+              className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 flex items-center justify-center bg-black/20 transition-colors group-hover:bg-black/30">
+              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/90 shadow-lg">
+                <svg
+                  className="h-7 w-7 translate-x-0.5 text-black"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+            </div>
+          </a>
+        ) : (
+          <div
+            className={`mb-16 flex h-64 items-center justify-center rounded-2xl bg-gradient-to-br ${project.gradient} border border-border md:h-80`}
+          >
+            <div className="flex flex-col items-center gap-2 text-muted/30">
+              <svg
+                className="h-16 w-16"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={0.5}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z"
+                />
+              </svg>
+              <span className="text-sm">Project Image Placeholder</span>
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Tech stack */}
         <div className="mb-16">
