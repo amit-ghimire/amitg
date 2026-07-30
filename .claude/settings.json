@@ -6,7 +6,11 @@
       "Bash(npx create-next-app@latest portfolio-temp --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --no-turbopack --use-npm)",
       "Bash(cp -r portfolio-temp/* portfolio-temp/.* d:/development/websites/amitg/amitg/)",
       "Bash(rm -rf portfolio-temp)",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(gh run:*)"
+    ],
+    "additionalDirectories": [
+      "d:\\development\\websites\\amitg\\deploy-temp"
     ]
   }
 }

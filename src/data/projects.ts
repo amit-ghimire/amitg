@@ -25,7 +25,7 @@ export const projects: Project[] = [
       "Mixed Reality",
       "Robotics Simulation",
       "Azure Kinect",
-      "User Study",
+      "User Research",
     ],
     category: "Research",
     gradient: "from-cyan-500/20 to-blue-600/20",

@@ -2,12 +2,13 @@ const experiences = [
   {
     period: "Sep 2024 — Present",
     title: "Senior Software Engineer",
-    company: "Blackbox Technologies",
+    company: "Blackbox Technologies|MersivX",
     points: [
-      "Developing and optimizing 3D eCommerce experiences using Unity (WebGL) and threejs focusing on immersive product browsing and interactive user interfaces",
-      "Integrating Firebase and Flask API for real-time product data synchronization between stores ecommerce databases and 3D storefronts",
-      "Building Python automation scripts to process and transform product data from multiple eCommerce APIs",
-      "Troubleshooting WebGL rendering performance, asset loading, and memory usage for mobile browsers",
+      "Building a SaaS platform, focusing on its 3D editor, for ecommerce merchants to create and manage web based 3D storefronts for their online stores",
+      "Developing and optimizing 3D eCommerce experiences for end users using Unity (WebGL) and threejs focusing on immersive store browsing, product exploration, gamifications and interactive user interfaces",
+      "Troubleshooting WebGL rendering performance, asset loading, and memory usage for desktop/mobile browsers",
+      "Developing and maintaining a cloud native service for real-time data synchronization between merchant's ecommerce platforms and our 3D storefronts",
+      "Developing and maintaining native ecommerce platform apps for wix, shopify and woocommerce to provide gateway for integration with our 3D storefronts",
     ],
   },
   {
@@ -18,6 +19,7 @@ const experiences = [
       "Collaborated with Korea Institute of Science and Technology on the Meta-Humanoid Project combining humanoid robots and AR avatars for telepresence",
       "Developed a Mixed Reality simulation framework to prototype and experimentally evaluate the Meta-Humanoid concept",
       "Designed and conducted mixed-method user studies with qualitative and quantitative analysis",
+      "Authored a research paper on the Meta-Humanoid concept and its evaluation, published in the proceedings of CHI 2023",
     ],
   },
   {
@@ -25,8 +27,7 @@ const experiences = [
     title: "Graduate Teaching Assistant",
     company: "University of British Columbia",
     points: [
-      "Introduction to Computation in Engineering Design (APSC 160)",
-      "Internet Computing (CPSC 317)",
+      "Actively assisted in delivering lectures, tutorials and quizzes forIntroduction to Computation in Engineering Design (APSC 160), and Internet Computing (CPSC 317)",
     ],
   },
   {
@@ -36,7 +37,7 @@ const experiences = [
     points: [
       "Designed and developed 2D, 3D, and XR K-12 educational games for the Chimpvine e-learning platform",
       "Collaborated with teachers to translate course syllabi into game-based learning experiences",
-      "Worked with data analysts to track student performance through in-game interaction recording for data-driven design improvements",
+      "Worked with data analysts to create an instrumentation system to track student performance through in-game interaction recording for data-driven design improvements",
     ],
   },
   {
